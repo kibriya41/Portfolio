@@ -96,6 +96,8 @@ export function Hero() {
       <div className="hidden md:flex flex-col items-center gap-5 mr-8 z-10 relative">
         <a
           href="https://github.com/kibriya41"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="GitHub"
           className="w-10 h-10 rounded-full border border-primary/20 bg-surface-container-high/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/65 hover:scale-110 transition-all duration-300"
         >
@@ -103,6 +105,8 @@ export function Hero() {
         </a>
         <a
           href="#"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="LinkedIn"
           className="w-10 h-10 rounded-full border border-primary/20 bg-surface-container-high/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/65 hover:scale-110 transition-all duration-300"
         >
@@ -110,6 +114,8 @@ export function Hero() {
         </a>
         <a
           href="mailto:kibriyaamit17@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="Email"
           className="w-10 h-10 rounded-full border border-primary/20 bg-surface-container-high/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/65 hover:scale-110 transition-all duration-300"
         >

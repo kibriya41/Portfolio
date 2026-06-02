@@ -87,6 +87,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           <a
             className="flex-1 flex items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-highest border border-outline-variant text-on-surface font-label-md text-label-md py-2.5 px-4 rounded-lg transition-colors"
             href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="material-symbols-outlined text-[18px]">code</span>
             GitHub
@@ -94,6 +96,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           <a
             className="flex-1 flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary font-label-md text-label-md py-2.5 px-4 rounded-lg transition-all"
             href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="material-symbols-outlined text-[18px]">open_in_new</span>
             Live Demo
