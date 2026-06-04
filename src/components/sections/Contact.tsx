@@ -175,7 +175,7 @@ export function Contact() {
                 </div>
                 <span className="font-body-md text-body-md">GitHub</span>
               </a>
-              <a className="flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors p-3 rounded-lg hover:bg-primary/5 group" href="#">
+              <a className="flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors p-3 rounded-lg hover:bg-primary/5 group" href="https://www.linkedin.com/in/kibriya-amit" target="_blank" rel="noopener noreferrer">
                 <div className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/30 group-hover:border-primary/50 transition-colors">
                   <span className="material-symbols-outlined">work</span>
                 </div>

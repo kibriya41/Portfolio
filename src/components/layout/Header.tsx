@@ -134,7 +134,7 @@ export function Header({ darkMode, setDarkMode, activeSection }: HeaderProps) {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2.5 group">
             <div className="relative w-9 h-9 rounded-full overflow-hidden border border-primary/20 shadow-[0_0_12px_rgba(155,202,255,0.15)] group-hover:scale-105 transition-transform duration-300">
-              <Image src="/logo.jpg" alt="Kibriya Amit Logo" fill priority className="object-cover" />
+              <Image src="/logo.png" alt="Kibriya Amit Logo" fill priority className="object-cover" />
             </div>
             <span className="text-lg font-bold font-headline-md text-on-surface group-hover:text-primary transition-colors hidden sm:inline-block">
               Kibriya Amit

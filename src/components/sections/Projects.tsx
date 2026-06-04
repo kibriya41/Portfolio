@@ -1,12 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useProjectAnimation } from "@/hooks/useProjectAnimation";
+import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
     title: "DigiTools: Premium Design System & UI/UX Showcase",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    tags: ["React.js", "Tailwind CSS", "Hero Ui"],
     desc: "A premium design system showcase displaying reusable components, interactive dashboards, mobile responsive layouts, and modern UI tokens for high-performance web applications.",
     image: "/digitools.jpg",
     github: "https://github.com/kibriya41/Assignment-6",
@@ -14,7 +16,7 @@ const projects = [
   },
   {
     title: "Tile Aesthetic: Premium Marketplace & Interior Design Platform",
-    tags: ["React.js", "Node.js", "PostgreSQL"],
+    tags: ["Next.js", "Node.js", "Express", "Better Auth"],
     desc: "An e-commerce marketplace and inspiration gallery for premium tiles and interior design. Features visual search, curated collections, and detailed product showcase cards.",
     image: "/tileaesthetic.jpg",
     github: "https://github.com/kibriya41/assignment-8-tiles",
@@ -22,11 +24,59 @@ const projects = [
   },
   {
     title: "KeenKeeper: Friendship Analytics & Relationship Management",
-    tags: ["Next.js", "Recharts", "Prisma"],
+    tags: ["React.js", "Tailwind CSS", "Daisy Ui"],
     desc: "A personal relationship management platform featuring friendship analytics, touchpoint tracking timeline charts, interaction patterns, and intelligent contact reminders.",
     image: "/keenkeeper.jpg",
     github: "https://github.com/kibriya41/keen-keeper",
     live: "https://keen-keeper-zeta-black.vercel.app/"
+  },
+  {
+    title: "Knowledge Vault: Structured Thinking & Second Brain Platform",
+    tags: ["HTML5", "Tailwind CSS", "Daisy Ui"],
+    desc: "A personal knowledge management system for storing notes, links, and learning summaries. Features structured thinking tools, semantic search, automatic concept connections, and reflection prompts.",
+    image: "/knowledge-vault.png",
+    github: "https://github.com/kibriya41/Assignment-1",
+    live: "https://assignment-1-mu-eight.vercel.app/"
+  },
+  {
+    title: "English Easy: Interactive Vocabulary & Language Learning Platform",
+    tags: ["HTML5", "JS", "Tailwind CSS"],
+    desc: "An interactive English learning platform with lesson-based vocabulary modules, pronunciation guides with audio playback, search & explore functionality, and progress tracking to build language skills.",
+    image: "/english-easy.png",
+    github: "https://github.com/kibriya41/english-janala-code-2",
+    live: "https://englishjanala.vercel.app/"
+  },
+
+  {
+    title: "Payoo: Mobile Financial Services & Digital Wallet",
+    tags: ["HTML5", "JS"],
+    desc: "A sleek mobile-first fintech application offering secure digital payments, cashout, money transfers, bill payments, bonus rewards, and real-time transaction history with a seamless user experience.",
+    image: "/payoo.png",
+    github: "https://github.com/kibriya41/payoo-project",
+    live: "https://payoo-project-zeta.vercel.app/"
+  },
+  {
+    title: "GitHub Issue Tracker: Project Issue Management System",
+    tags: ["JavaScript", "Tailwind CSS", "Daisy Ui"],
+    desc: "A full-featured issue tracking system inspired by GitHub Issues. Supports creating, filtering, and managing issues by priority and status with authentication, team collaboration, and real-time updates.",
+    image: "/issue-tracker.png",
+    github: "https://github.com/kibriya41/Assignment__5",
+    live: "https://github-lssuer-tracker.vercel.app/"
+  },
+  {
+    title: "Job Application Tracker: Career Management Dashboard",
+    tags: ["JavaScript", "Tailwind CSS", "Daisy Ui"],
+    desc: "A career management dashboard to track job applications, filter by status (interview, rejected, applied), monitor statistics, and stay organized throughout the job search process.",
+    image: "/job-tracker.png",
+    github: "https://github.com/kibriya41/-Assignment4-2",
+    live: "https://job-applicaton-tracker-umber.vercel.app/"
+  }, {
+    title: "Birthday Celebration: Interactive Greeting & Celebration Platform",
+    tags: ["Tailwind CSS", "CSS Animations"],
+    desc: "An interactive, personalized birthday greeting card platform featuring dynamic candle lighting, colorful confetti physics, custom greetings, and immersive celebratory sound effects.",
+    image: "/birthday.png",
+    github: "https://github.com/kibriya41/birthday-wish",
+    live: "https://birthday-wish-orpin-two.vercel.app/"
   }
 ];
 
@@ -109,6 +159,25 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
 }
 
 export function Projects() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    const element = document.getElementById("projects");
+    if (element) {
+      // Find its position and scroll to it with some offset
+      const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="mt-section-gap flex flex-col items-center w-full reveal-section" id="projects">
       <header className="text-center mb-stack-lg flex flex-col items-center">
@@ -121,11 +190,58 @@ export function Projects() {
       </header>
 
       {/* Projects Grid Container with ScrollTrigger class */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter w-full reveal-cards-container">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+      <div className="w-full min-h-[600px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter w-full reveal-cards-container"
+          >
+            {currentProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-4 mt-12 select-none">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold tracking-wider uppercase text-on-surface-variant hover:text-primary disabled:opacity-30 disabled:pointer-events-none transition-colors duration-200 cursor-pointer"
+          >
+            ← Prev
+          </button>
+
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-bold transition-all duration-300 cursor-pointer ${currentPage === pageNumber
+                  ? "bg-primary text-on-primary shadow-[0_0_15px_rgba(155,202,255,0.3)] scale-105"
+                  : "text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40"
+                  }`}
+              >
+                {pageNumber}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold tracking-wider uppercase text-on-surface-variant hover:text-primary disabled:opacity-30 disabled:pointer-events-none transition-colors duration-200 cursor-pointer"
+          >
+            Next →
+          </button>
+        </div>
+      )}
     </section>
   );
 }

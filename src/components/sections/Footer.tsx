@@ -46,7 +46,7 @@ export function Footer() {
               </a>
               <a
                 ref={socialLinkedin}
-                href="#"
+                href="https://www.linkedin.com/in/kibriya-amit"
                 aria-label="LinkedIn"
                 className="w-10 h-10 rounded-full border border-primary/20 bg-surface-container-high/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/65 transition-colors"
               >
