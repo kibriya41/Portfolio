@@ -14,13 +14,21 @@ const projects = [
     github: "https://github.com/kibriya41/Assignment-6",
     live: "https://grand-kitten-d6b8e7.netlify.app/"
   },
+   {
+    title: "TutorFlux: Smart Tutor Booking & EdTech Platform",
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Node.js", "Express"],
+    desc: "A full-stack EdTech platform connecting students with verified expert tutors. Features smart conflict-free booking, tutor profiles, session management dashboard, digital tokens, and personalized learning experiences.",
+    image: "/tutorflux-1.png",
+    github: "https://github.com/kibriya41/TutorFlux",
+    live: "https://tutorflux.onrender.com/"
+  },
   {
     title: "Tile Aesthetic: Premium Marketplace & Interior Design Platform",
     tags: ["Next.js", "Node.js", "Express", "Better Auth"],
     desc: "An e-commerce marketplace and inspiration gallery for premium tiles and interior design. Features visual search, curated collections, and detailed product showcase cards.",
     image: "/tileaesthetic.jpg",
     github: "https://github.com/kibriya41/assignment-8-tiles",
-    live: "https://assignment-8-tiles-cgxy.vercel.app/"
+    live: "https://tiles-tu4d.onrender.com"
   },
   {
     title: "KeenKeeper: Friendship Analytics & Relationship Management",
@@ -28,7 +36,7 @@ const projects = [
     desc: "A personal relationship management platform featuring friendship analytics, touchpoint tracking timeline charts, interaction patterns, and intelligent contact reminders.",
     image: "/keenkeeper.jpg",
     github: "https://github.com/kibriya41/keen-keeper",
-    live: "https://keen-keeper-zeta-black.vercel.app/"
+    live: "https://keen-keeper.onrender.com"
   },
   {
     title: "Knowledge Vault: Structured Thinking & Second Brain Platform",
@@ -36,7 +44,7 @@ const projects = [
     desc: "A personal knowledge management system for storing notes, links, and learning summaries. Features structured thinking tools, semantic search, automatic concept connections, and reflection prompts.",
     image: "/knowledge-vault.png",
     github: "https://github.com/kibriya41/Assignment-1",
-    live: "https://assignment-1-mu-eight.vercel.app/"
+    live: "https://polite-beijinho-83ec17.netlify.app/"
   },
   {
     title: "English Easy: Interactive Vocabulary & Language Learning Platform",
@@ -44,7 +52,7 @@ const projects = [
     desc: "An interactive English learning platform with lesson-based vocabulary modules, pronunciation guides with audio playback, search & explore functionality, and progress tracking to build language skills.",
     image: "/english-easy.png",
     github: "https://github.com/kibriya41/english-janala-code-2",
-    live: "https://englishjanala.vercel.app/"
+    live: "https://cosmic-taiyaki-502d17.netlify.app/"
   },
 
   {
@@ -53,7 +61,7 @@ const projects = [
     desc: "A sleek mobile-first fintech application offering secure digital payments, cashout, money transfers, bill payments, bonus rewards, and real-time transaction history with a seamless user experience.",
     image: "/payoo.png",
     github: "https://github.com/kibriya41/payoo-project",
-    live: "https://payoo-project-zeta.vercel.app/"
+    live: "https://vocal-syrniki-51a74f.netlify.app/"
   },
   {
     title: "GitHub Issue Tracker: Project Issue Management System",
@@ -61,7 +69,7 @@ const projects = [
     desc: "A full-featured issue tracking system inspired by GitHub Issues. Supports creating, filtering, and managing issues by priority and status with authentication, team collaboration, and real-time updates.",
     image: "/issue-tracker.png",
     github: "https://github.com/kibriya41/Assignment__5",
-    live: "https://github-lssuer-tracker.vercel.app/"
+    live: "https://teal-bienenstitch-04af8d.netlify.app/"
   },
   {
     title: "Job Application Tracker: Career Management Dashboard",
@@ -69,14 +77,14 @@ const projects = [
     desc: "A career management dashboard to track job applications, filter by status (interview, rejected, applied), monitor statistics, and stay organized throughout the job search process.",
     image: "/job-tracker.png",
     github: "https://github.com/kibriya41/-Assignment4-2",
-    live: "https://job-applicaton-tracker-umber.vercel.app/"
+    live: "https://thunderous-duckanoo-90c199.netlify.app/"
   }, {
     title: "Birthday Celebration: Interactive Greeting & Celebration Platform",
     tags: ["Tailwind CSS", "CSS Animations"],
     desc: "An interactive, personalized birthday greeting card platform featuring dynamic candle lighting, colorful confetti physics, custom greetings, and immersive celebratory sound effects.",
     image: "/birthday.png",
     github: "https://github.com/kibriya41/birthday-wish",
-    live: "https://birthday-wish-orpin-two.vercel.app/"
+    live: "https://birthday-wish-by-amit.netlify.app/"
   }
 ];
 
